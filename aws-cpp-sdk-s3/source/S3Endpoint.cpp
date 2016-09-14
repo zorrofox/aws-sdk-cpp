@@ -34,6 +34,7 @@ namespace S3Endpoint
   static const int AP_SOUTHEAST_2_HASH = Aws::Utils::HashingUtils::HashString("ap-southeast-2");
   static const int AP_NORTHEAST_1_HASH = Aws::Utils::HashingUtils::HashString("ap-northeast-1");
   static const int SA_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("sa-east-1");
+  static const int CN_NORTH_1_HASH = Aws::Utils::HashingUtils::HashString("cn-north-1");
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
@@ -72,6 +73,10 @@ namespace S3Endpoint
       else if(hash == SA_EAST_1_HASH)
       {
         return "s3-sa-east-1.amazonaws.com";
+      }
+      else if(hash == CN_NORTH_1_HASH)
+      {
+        return "s3.cn-north-1.amazonaws.com.cn";
       }
     }
     Aws::StringStream ss;
